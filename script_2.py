@@ -12,4 +12,14 @@ def add_dictionaries(dict1=None, dict2=None):
     @return rtn_dict dictionary object
     """
 
-    return None
+    rtn_dict = {}
+
+    if dict1 != None and dict2 != None:
+        for key, value in dict2.items():
+            if key in dict1:
+                rtn_dict[key] = dict1[key] + value
+
+if __name__ == "__main__":
+    dict1 = {"a":5, "b":9, "c":90, "d":34}
+    dict2 = {"b":89, "c":34, "e": 8}
+    print(add_dictionaries(dict1, dict2))
